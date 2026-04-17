@@ -232,7 +232,8 @@
                 }
                 
                 const data = await response.json();
-                videos = data.videos ? data.videos.filter(video => video.status === 'FAILED') : [];
+                console.log('Resposta da API:', data);
+                videos = data.videos ? data.videos : [];
                 
                 renderVideos();
             } catch (error) {
