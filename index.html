@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtrar Vídeos Draft - Panda Video</title>
+    <title>Filtrar Vídeos Failed - Panda Video</title>
     <style>
         * {
             margin: 0;
@@ -178,14 +178,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎥 Gerenciar Vídeos Draft - Panda Video</h1>
+        <h1>🎥 Gerenciar Vídeos Failed - Panda Video</h1>
         
         <div class="form-group">
             <label for="token">🔑 Token API da Panda Video:</label>
             <input type="text" id="token" placeholder="Insira seu token API aqui...">
         </div>
         
-        <button id="loadBtn">📥 Carregar Vídeos Draft</button>
+        <button id="loadBtn">📥 Carregar Vídeos Failed</button>
         
         <div class="select-all">
             <input type="checkbox" id="selectAll">
@@ -232,14 +232,14 @@
                 }
                 
                 const data = await response.json();
-                videos = data.videos ? data.videos.filter(video => video.status === 'DRAFT') : [];
+                videos = data.videos ? data.videos.filter(video => video.status === 'FAILED') : [];
                 
                 renderVideos();
             } catch (error) {
                 alert('❌ Erro ao carregar vídeos: ' + error.message);
             } finally {
                 loadBtn.disabled = false;
-                loadBtn.textContent = '📥 Carregar Vídeos Draft';
+                loadBtn.textContent = '📥 Carregar Vídeos Failed';
             }
         });
         
