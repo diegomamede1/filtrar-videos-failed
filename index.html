@@ -221,7 +221,9 @@
             try {
                 const response = await fetch('https://api-v2.pandavideo.com.br/videos', {
                     headers: {
-                        'X-API-Key': token
+                        'accept': 'application/json',
+                        'content-type': 'application/json',
+                        'Authorization': token
                     }
                 });
                 
@@ -286,11 +288,14 @@
             for (const cb of selected) {
                 const videoId = cb.dataset.id;
                 try {
-                    const response = await fetch(`https://api-v2.pandavideo.com.br/videos/${videoId}`, {
+                    const response = await fetch('https://api-v2.pandavideo.com.br/videos', {
                         method: 'DELETE',
                         headers: {
-                            'X-API-Key': token
-                        }
+                            'accept': 'application/json',
+                            'content-type': 'application/json',
+                            'Authorization': token
+                        },
+                        body: JSON.stringify({ video_id: videoId })
                     });
                     
                     if (response.ok) {
