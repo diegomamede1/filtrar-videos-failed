@@ -223,7 +223,7 @@
                     headers: {
                         'accept': 'application/json',
                         'content-type': 'application/json',
-                        'Authorization': token
+                        'Authorization': `Bearer ${token}`
                     }
                 });
                 
@@ -294,7 +294,7 @@
                         headers: {
                             'accept': 'application/json',
                             'content-type': 'application/json',
-                            'Authorization': token
+                            'Authorization': `Bearer ${token}`
                         },
                         body: JSON.stringify({ video_id: videoId })
                     });
