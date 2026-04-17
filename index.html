@@ -231,7 +231,6 @@
                 }
                 
                 const data = await response.json();
-                console.log('Resposta da API:', data);
                 videos = data.videos ? data.videos : [];
                 
                 renderVideos();
